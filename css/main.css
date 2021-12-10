@@ -1,0 +1,192 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.header {
+    width: 100%;
+    height: 64px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.nav {
+    width: 100%;
+    max-width: 1256px;
+    height: 100%;
+    margin: 0 auto;
+}
+.nav-list {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.nav-item {
+    width: fit-content;
+    height: 100%;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+    padding: 0 16px;
+}
+.nav-item:hover .submenu {
+    pointer-events: all;
+    user-select: all;
+    opacity: 1;
+}
+.nav-item:hover .submenu-link {
+    transform: translateY(0px);
+    opacity: 1;
+}
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 16px 8px;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    transform: translateY(12px);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transition: opacity .35s;
+}
+.submenu::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 12px;
+}
+.submenu-item {
+    width: calc(100% / 4 - 16px);
+    margin: 0 8px;
+}
+.submenu-title {
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ebebeb;
+}
+.submenu-list {
+    display: flex;
+    flex-direction: column;
+    counter-reset: delayTransition;
+}
+.submenu-link {
+    font-size: 16px;
+    line-height: 18px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .35s, transform .35s;
+}
+.submenu-link::before {
+    counter-increment: delayTransition;
+}
+.submenu-link + .submenu-link {
+    margin-top: 16px;
+}
+
+/* Top to Bttom */
+.submenu-link.ttb:nth-of-type(1) {
+    transition-delay: .10s;
+}
+.submenu-link.ttb:nth-of-type(2) {
+    transition-delay: .15s;
+}
+.submenu-link.ttb:nth-of-type(3) {
+    transition-delay: .20s;
+}
+.submenu-link.ttb:nth-of-type(4) {
+    transition-delay: .25s;
+}
+.submenu-link.ttb:nth-of-type(5) {
+    transition-delay: .30s;
+}
+
+/* Bottom to Top */
+.submenu-link.btt:nth-of-type(1) {
+    transition-delay: .30s;
+}
+.submenu-link.btt:nth-of-type(2) {
+    transition-delay: .25s;
+}
+.submenu-link.btt:nth-of-type(3) {
+    transition-delay: .20s;
+}
+.submenu-link.btt:nth-of-type(4) {
+    transition-delay: .15s;
+}
+.submenu-link.btt:nth-of-type(5) {
+    transition-delay: .10s;
+}
+
+/* Left Top to Right Bottom */
+.submenu-item:nth-of-type(1) .submenu-link.ltrb:nth-of-type(1) {
+    transition-delay: .10s;
+}
+.submenu-item:nth-of-type(1) .submenu-link.ltrb:nth-of-type(2) {
+    transition-delay: .15s;
+}
+.submenu-item:nth-of-type(1) .submenu-link.ltrb:nth-of-type(3) {
+    transition-delay: .20s;
+}
+.submenu-item:nth-of-type(1) .submenu-link.ltrb:nth-of-type(4) {
+    transition-delay: .25s;
+}
+.submenu-item:nth-of-type(1) .submenu-link.ltrb:nth-of-type(5) {
+    transition-delay: .30s;
+}
+.submenu-item:nth-of-type(2) .submenu-link.ltrb:nth-of-type(1) {
+    transition-delay: .15s;
+}
+.submenu-item:nth-of-type(2) .submenu-link.ltrb:nth-of-type(2) {
+    transition-delay: .20s;
+}
+.submenu-item:nth-of-type(2) .submenu-link.ltrb:nth-of-type(3) {
+    transition-delay: .25s;
+}
+.submenu-item:nth-of-type(2) .submenu-link.ltrb:nth-of-type(4) {
+    transition-delay: .30s;
+}
+.submenu-item:nth-of-type(2) .submenu-link.ltrb:nth-of-type(5) {
+    transition-delay: .35s;
+}
+.submenu-item:nth-of-type(3) .submenu-link.ltrb:nth-of-type(1) {
+    transition-delay: .20s;
+}
+.submenu-item:nth-of-type(3) .submenu-link.ltrb:nth-of-type(2) {
+    transition-delay: .25s;
+}
+.submenu-item:nth-of-type(3) .submenu-link.ltrb:nth-of-type(3) {
+    transition-delay: .30s;
+}
+.submenu-item:nth-of-type(3) .submenu-link.ltrb:nth-of-type(4) {
+    transition-delay: .35s;
+}
+.submenu-item:nth-of-type(3) .submenu-link.ltrb:nth-of-type(5) {
+    transition-delay: .40s;
+}
+.submenu-item:nth-of-type(4) .submenu-link.ltrb:nth-of-type(1) {
+    transition-delay: .25s;
+}
+.submenu-item:nth-of-type(4) .submenu-link.ltrb:nth-of-type(2) {
+    transition-delay: .30s;
+}
+.submenu-item:nth-of-type(4) .submenu-link.ltrb:nth-of-type(3) {
+    transition-delay: .35s;
+}
+.submenu-item:nth-of-type(4) .submenu-link.ltrb:nth-of-type(4) {
+    transition-delay: .40s;
+}
+.submenu-item:nth-of-type(4) .submenu-link.ltrb:nth-of-type(5) {
+    transition-delay: .50s;
+}
+
